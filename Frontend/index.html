@@ -6,17 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Test</title>
 </head>
 
 <body>
     <div class="header navber">
-
+        
     </div>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2"
+                    class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-3 text-xl">CODEy</span>
+            </a>
+           
+        </div>
+    </header>
     <div class="code-editor">
-        <div class="editor" >
-            <div class="select-language">
-                <select>
+        <div class="editor">
+            <div class="select-language ">
+                <select class="selectBox">
                     SELECT LANGUAGE
                     &nbsp;&nbsp;
                     <option value="0">C</option>
@@ -28,20 +45,21 @@
                 </select>
             </div>
             <div class="code-writing-section" id="editor"></div>
-            
+
         </div>
         <div class="IO-area">
             <div class="input">
                 <div class="input-navbar">
                     <h2>INPUT</h2>
                 </div>
-                <textarea ></textarea>
+                <textarea></textarea>
                 <div class="button-container">
                     <button onclick="executeCode()">RUN</button>
                 </div>
             </div>
             <div class="output">
                 <h2>OUTPUT</h2>
+                <textarea></textarea>
             </div>
         </div>
     </div>
