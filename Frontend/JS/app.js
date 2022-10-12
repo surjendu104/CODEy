@@ -1,5 +1,7 @@
 let editor = document.getElementById('editor')
 
+// let editor = document.querySelector('editor')
+
 ace.edit(editor, {
     mode:"ace/mode/c_cpp",
     selectionStyle: "text",
@@ -34,6 +36,4 @@ textAreaContent.addEventListener('input',function handleChange(event){
     textAreaContent.value = event.target.value
 })
 
-console.log(textAreaContent.value)
-
-console.log(editor.vlaue)
+const code = document.querySelector('editor')
