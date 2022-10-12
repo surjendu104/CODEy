@@ -1,4 +1,4 @@
-let editor = document.querySelector("#editor")
+let editor = document.getElementById('editor')
 
 ace.edit(editor, {
     mode:"ace/mode/c_cpp",
@@ -26,3 +26,14 @@ function changeLanguage() {
 }
 
 
+const textAreaContent = document.getElementById('input')
+
+
+textAreaContent.addEventListener('input',function handleChange(event){
+    // temp+=(event.target.value)
+    textAreaContent.value = event.target.value
+})
+
+console.log(textAreaContent.value)
+
+console.log(editor.vlaue)
