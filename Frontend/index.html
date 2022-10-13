@@ -39,7 +39,7 @@
         <div class="IO-area">
             <div class="input">
                 <div class="select-language ">
-                    <select class="selectBox language" id="language" onchange="changeLanguage()">
+                    <select class="selectBox language" id="language" name="language" onchange="changeLanguage()">
                         SELECT LANGUAGE:
                         &nbsp;&nbsp;
                         <option value="c">C</option>
@@ -56,6 +56,7 @@
                 <textarea id="input"></textarea>
                 <div class="button-container">
                     <button onclick="executeCode()">RUN</button>
+                    <button onclick="getInputData()">SUBMIT INPUT</button>
                 </div>
             </div>
             <div class="output">
@@ -65,6 +66,7 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js"></script>
     <script src="JS/app.js"></script>
 </body>
