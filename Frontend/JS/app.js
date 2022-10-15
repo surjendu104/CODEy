@@ -30,7 +30,6 @@
 
 
 
-const textAreaContent = document.getElementById('input')
 
 
 const textarea = document.querySelector('textarea')
@@ -38,7 +37,6 @@ const textarea = document.querySelector('textarea')
 textarea.addEventListener('keydown', (e) => {
   if (e.key === 'Tab') {
     e.preventDefault()
-
     textarea.setRangeText(
       '  ',
       textarea.selectionStart,
@@ -59,17 +57,30 @@ textarea.addEventListener('keyup', event => {
 })
 
 
+var inputData, codeData
+const inputTextAreaContent = document.getElementById('input')
+const codeTextAreaContent = document.getElementById('code-write')
 function getInputTextAreaValue() {
-    textAreaContent.addEventListener('input', function handleChange(event) {
-        textAreaContent.value = event.target.value
-    })
+  inputTextAreaContent.addEventListener('input', function handleChange(event) {
+    inputTextAreaContent.value = event.target.value
+  })
 
-    return textAreaContent.value
+  codeTextAreaContent.addEventListener('input', function handleChange(event) {
+    codeTextAreaContent.value = event.target.value
+  })
+
+  inputData = inputTextAreaContent.value
+  codeData = codeTextAreaContent.value
+  // console.log(inputTextAreaContent.value)
+  // console.log(codeTextAreaContent.value)
+
+  return { input: inputTextAreaContent.value, code: codeTextAreaContent.value }
 }
 
-var inputData
+
 
 function getInputData() {
-    console.log(getInputTextAreaValue())
-    return inputData = getInputTextAreaValue()
+  console.log(getInputTextAreaValue())
+  return getInputTextAreaValue()
 }
+
