@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
     <title>Test</title>
 </head>
 
@@ -31,9 +32,13 @@
         </div>
     </header>
     <div class="code-editor">
-        <div class="editor">
+        <div class="editor" id="editor">
 
-            <div class="code-writing-section" id="editor"></div>
+            <!-- <div class="code-writing-section" id="editor"></div> -->
+            <div class="line-numbers">
+                <span></span>
+            </div>
+            <textarea id="code-write" spellcheck="false"></textarea>
 
         </div>
         <div class="IO-area">
@@ -66,8 +71,8 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js"></script> -->
     <script src="JS/app.js"></script>
 </body>
 

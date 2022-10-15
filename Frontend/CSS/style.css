@@ -38,20 +38,30 @@ body {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.code-writing-section {
-    /* position: absolute; */
-    width: 95vh;
-    height: 90vh;
-    /* background-color: black; */
-    overflow: hidden;
+
+
+.editor textarea {
+    width: 70vh;
+    height: 82vh;
+    background-color: #282a36;
+    margin: 4vh 2.5vh;
+    font-family: 'JetBrains Mono';
+    font-size: .9rem;
+    border: 2px solid;
+    border-radius: 5px;
+    color: white;
+    /* cursor: cell; */
+
 }
 
-#editor {
-    /* position: absolute; */
-    width: 95vh;
-    height: 90vh;
-    /* background-color: black; */
-    overflow:unset;
+.editor textarea::-webkit-scrollbar {
+    width: .4rem;
+}
+
+.editor textarea::-webkit-scrollbar-thumb {
+
+    background-color: rgb(239, 123, 142);
+    border-radius: .4rem;
 }
 
 .IO-area {
