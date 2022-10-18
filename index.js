@@ -11,12 +11,12 @@ app.locals.data = {}
 
 
 app.get('/getOutput', (req, res) => {
+    console.log("lsdjabdjdbf",_input)
     var data = qs.stringify({
         code: _code,
         language: _lang,
         input: _input
     })
-    // console.log(_code)
     var config = {
         method: "post",
         url: "https://codex-api.herokuapp.com/",
@@ -34,26 +34,27 @@ app.get('/getOutput', (req, res) => {
         })
         .then(()=>{
 
-            // console.log(_output)
-            res.status(200).send({ getOutput: (JSON.parse(_output)).output})
+            console.log(_output)
+            if((JSON.parse(_output)).success==true)
+                res.status(200).send({ getOutput: (JSON.parse(_output)).output})
+            else
+                res.status(200).send({ getOutput: (JSON.parse(_output)).error})
         })
         .catch((error)=> {
             console.log(error);
-            res.status(200).send({ getOutput: (JSON.parse(_output)).error})
         });
 })
 
-var _code,_lang,_input,_output,_error
-// consol.log(_code)
+var _code,_lang,_input,_output
 app.post('/', (req, res) => {
     const { code } = req.body
     const { lang } = req.body
     const { input } = req.body
 
-    req.app.locals.data = req.body
     _code=code
     _lang=lang
     _input=input
+    // console.log(_lang)
     
 })
 

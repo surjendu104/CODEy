@@ -25,7 +25,7 @@ textarea.addEventListener('keyup', event => {
 })
 
 
-var inputData, codeData
+var inputData, codeData,langData
 const inputTextAreaContent = document.getElementById('input')
 const codeTextAreaContent = document.getElementById('code-write')
 function getInputTextAreaValue() {
@@ -39,6 +39,7 @@ function getInputTextAreaValue() {
 
   inputData = inputTextAreaContent.value
   codeData = codeTextAreaContent.value
+  langData = lang.options[lang.selectedIndex].value
   // console.log(inputTextAreaContent.value)
   // console.log(codeTextAreaContent.value)
 
@@ -76,9 +77,7 @@ async function executeCode() {
     const result = await res.json()
     outputResponse.value = result.getOutput
   }
-  postData()
-
-  getData()
+  postData().then( getData())
 
 }
 
