@@ -32,27 +32,48 @@
         </div>
     </header>
     <div class="code-editor">
-        <div class="editor" id="editor">
-
-            <!-- <div class="code-writing-section" id="editor"></div> -->
-            <div class="line-numbers">
-                <span></span>
-            </div>
-            <textarea id="code-write" spellcheck="false"></textarea>
-
-        </div>
+        <div class="editor" id="editor"></div>
+        
         <div class="IO-area">
             <div class="input">
                 <div class="select-language ">
-                    <select class="selectBox language" id="language" name="language" >
+                    <select class="selectBox language" id="language" name="language" onchange="changeLanguage()">
                         SELECT LANGUAGE:
+                        <option selected>Language</option>
                         &nbsp;&nbsp;
                         <option value="c">C</option>
                         <option value="cpp">C++</option>
+                        <option value="cs">C#</option>
                         <option value="java">JAVA</option>
-                        <option value="pyhton">PYTHON</option>
-                        <option value="php">PHP</option>
-                        <option value="javascript">Node JS</option>
+                        <option value="py">PYTHON</option>
+                        <option value="go">GOlang</option>
+                        <option value="js">Node JS</option>
+                    </select>
+                    <select class="selectBox changeTheme" id="changeTheme" name="changeTheme" onchange="changeTheme()">
+                        SELECT THEME:
+                        &nbsp;&nbsp;
+                        <option selected>Themes</option>
+                        <option value="ambiance">Ambiance</option>
+                        <option value="chaos">Chaos</option>
+                        <option value="chrome">Chrome</option>
+                        <option value="cobalt">Cobalt</option>
+                        <option value="dracula">Dracula</option>
+                        <option value="eclipse">Eclipse</option>
+                        <option value="github">GitHub</option>
+                        <option value="twilight">Twilight</option>
+                        <option value="xcode">Xcode</option>
+                        <option value="sql">SQL Server</option>
+                    </select>
+                    <select class="selectBox fontSize" id="fontSize" name="fontSize" onchange="changeFontSize()">
+                        SELECT FONTSIZE:
+                        &nbsp;&nbsp;
+                        <option selected>Font Size</option>
+                        <option value="9">9px</option>
+                        <option value="10">10px</option>
+                        <option value="15">15px</option>
+                        <option value="18">18px</option>
+                        <option value="22">22px</option>
+                        <option value="25">25px</option>
                     </select>
                 </div>
                 <div class="input-navbar">
@@ -60,8 +81,8 @@
                 </div>
                 <textarea id="input"></textarea>
                 <div class="button-container">
-                    <button onclick="executeCode()">RUN</button>
-                    <button onclick="getInputData()">SUBMIT INPUT</button>
+                    <button onclick="getInputData().then(executeCode())">RUN</button>
+                    <!-- <button onclick="getInputData()">SUBMIT INPUT</button> -->
                 </div>
             </div>
             <div class="output">
@@ -71,6 +92,7 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js" ></script>
     <script src="app.js"></script>
 </body>
 
