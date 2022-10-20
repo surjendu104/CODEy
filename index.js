@@ -2,17 +2,13 @@ const express = require('express')
 var axios = require("axios")
 var qs = require("qs");
 const app = express()
-const port = 8383
+const port = process.env.PORT || 8383
 
 app.use(express.static('Frontend'))
 app.use(express.json())
-app.locals.data = {}
 
-// app.get('/',(res,rwq)=>{
-//     app.use(express.static(path.resolve(__dirname,'Frontend')))
-//     res.sendFile(path.resolve(__dirname,'Frontend','index.html'))
-// })
 
+var _code,_lang,_input,_output
 
 app.get('/getOutput', (req, res) => {
     console.log("lsdjabdjdbf",_lang)
@@ -48,7 +44,6 @@ app.get('/getOutput', (req, res) => {
         });
 })
 
-var _code,_lang,_input,_output
 app.post('/', (req, res) => {
     const { code } = req.body
     const { language } = req.body
