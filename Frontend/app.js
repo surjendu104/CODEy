@@ -89,8 +89,9 @@ function changeFontSize() {
 }
 
 const baseUrl = 'http://localhost:8383/'
+// const baseUrl = process.env.PORT
 
-var codeData, langData, inputData
+var codeData, langData, inputData=""
 const inputTextAreaContent = document.getElementById('input')
 function getInputTextAreaValue() {
   inputTextAreaContent.addEventListener('input', function handleChange(event) {
