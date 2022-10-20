@@ -4,7 +4,7 @@ var qs = require("qs");
 const app = express()
 const port = process.env.port ||8383
 
-app.use(express.static('Frontend'))
+app.use(express.static('../Frontend'))
 app.use(express.json())
 app.locals.data = {}
 
