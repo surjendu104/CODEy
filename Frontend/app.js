@@ -88,8 +88,8 @@ function changeFontSize() {
   if(fontValue=="25")document.getElementById('editor').style.fontSize = '25px';
 }
 
-const baseUrl = 'http://localhost:8383/'
-// const baseUrl = process.env.PORT
+// const baseUrl = 'http://localhost:8383/'
+const baseUrl = `${process.env.BACKEND_ROOT_URL}`
 
 var codeData, langData, inputData=""
 const inputTextAreaContent = document.getElementById('input')
@@ -134,7 +134,7 @@ async function executeCode() {
   }
   async function getData() {
 
-    const res = await fetch("http://localhost:8383/getOutput", {
+    const res = await fetch(`${baseUrl}/getOutput`, {
       method: 'GET'
     })
     const result = await res.json()
