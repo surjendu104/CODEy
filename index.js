@@ -8,6 +8,10 @@ app.use(express.static('Frontend'))
 app.use(express.json())
 app.locals.data = {}
 
+app.get('/',(res,rwq)=>{
+    app.use(express.static(path.resolve(__dirname,'Frontend')))
+    res.sendFile(path.resolve(__dirname,'Frontend','index.html'))
+})
 
 
 app.get('/getOutput', (req, res) => {
