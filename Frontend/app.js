@@ -88,10 +88,10 @@ function changeFontSize() {
   if(fontValue=="25")document.getElementById('editor').style.fontSize = '25px';
 }
 
-// const baseUrl = 'http://localhost:8383/'
-const baseUrl = `${process.env.BACKEND_ROOT_URL}`
+const baseUrl = 'http://localhost:48622/'
+// const baseUrl = `${process.env.BACKEND_ROOT_URL}`
 
-var codeData, langData, inputData=""
+var codeData, langData, inputData
 const inputTextAreaContent = document.getElementById('input')
 function getInputTextAreaValue() {
   inputTextAreaContent.addEventListener('input', function handleChange(event) {
@@ -109,10 +109,10 @@ function getInputData() {
   // inputData = inputTextAreaContent.value
   // codeData = editor.getSession().getValue()
   // langData = lang.options[lang.selectedIndex].value
-  getInputTextAreaValue()
-  console.log(inputData)
-  console.log(codeData)
-  console.log(langData)
+  // getInputTextAreaValue()
+  // console.log(inputData)
+  // console.log(codeData)
+  // console.log(langData)
   return getInputTextAreaValue()
 
 }
@@ -134,15 +134,41 @@ async function executeCode() {
   }
   async function getData() {
 
-    const res = await fetch(`${baseUrl}/getOutput`, {
+    const res = await fetch(baseUrl+'getOutput', {
       method: 'GET'
     })
     const result = await res.json()
     outputResponse.value = result.getOutput
   }
-  postData().then(getData())
+  let promise = new Promise((resolve,reject) =>{
+    resolve(getInputData())
+  })
+  promise.then(postData()).then(getData())
 
 }
+// async function executeCode() 
+// {
+//   async function postData() {
+//     var body = qs.stringify({
+//               code: codeData,
+//               language: langData,
+//               input: inputData
+//             })
+//     console.log(body)
+//     const res = await fetch("https://codex-api.herokuapp.com/",{
+//       method:"POST",
+//       headers: {
+//         'Content-Type' : "application/x-www-form-urlencoded",
+//       },
+//       data:body
+//     })
+//     var result = await res.json()
+//     console.log(result)
+
+//   }
+//   getInputData().then(postData())
+// }
+
 
 
 

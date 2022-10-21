@@ -2,16 +2,18 @@ const express = require('express')
 var axios = require("axios")
 var qs = require("qs");
 const app = express()
-const port = process.env.PORT || 8383
+const port = process.env.PORT || 48622
 
 app.use(express.static('Frontend'))
 app.use(express.json())
 
 
 var _code,_lang,_input,_output
+app.get('/',(req,res)=>{
+    res.status(200).send({baseUrl : process.env.BACKEND_ROOT_URL})
+})
 
 app.get('/getOutput', (req, res) => {
-    console.log("lsdjabdjdbf",_lang)
     var data = qs.stringify({
         code: _code,
         language: _lang,
