@@ -2,7 +2,7 @@ const express = require('express')
 var axios = require("axios")
 var qs = require("qs");
 const app = express()
-const port = process.env.PORT || 48622
+const port = 48622
 
 app.use(express.static('Frontend'))
 app.use(express.json())
