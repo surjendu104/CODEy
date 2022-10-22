@@ -143,9 +143,9 @@ async function executeCode() {
     console.log(result)
     outputResponse.value = result.getOutput
   }
-  // let promise = new Promise((resolve,reject) =>{
-  //   resolve(getInputData())
-  // })
-  getInputData().then(postData()).then(getData())
+  let promise = new Promise((resolve,reject) =>{
+    resolve(getInputData())
+  })
+  promise.then(postData()).then(getData())
 
 }
