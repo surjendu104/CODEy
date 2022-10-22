@@ -121,6 +121,7 @@ async function executeCode() {
   async function postData() {
     const res = await fetch("https://compilation-server.herokuapp.com/", {
       method: 'POST',
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -136,6 +137,7 @@ async function executeCode() {
 
     const res = await fetch("https://compilation-server.herokuapp.com/getOutput", {
       method: 'GET',
+      mode: 'no-cors',
     })
     const result = await res.json()
     console.log(result)
