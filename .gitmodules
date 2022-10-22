@@ -1,3 +1,0 @@
-[submodule "Backend"] 
-  path = Backend 
-  url = git://git.heroku.com/code-compilation-api-for-ide.git/
