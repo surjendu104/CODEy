@@ -121,7 +121,6 @@ async function executeCode() {
   async function postData() {
     const res = await fetch("https://compilation-server.herokuapp.com/", {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -148,25 +147,3 @@ async function executeCode() {
   getInputData().then(postData()).then(getData())
 
 }
-// async function executeCode() 
-// {
-//   async function postData() {
-//     var body = qs.stringify({
-//               code: codeData,
-//               language: langData,
-//               input: inputData
-//             })
-//     console.log(body)
-//     const res = await fetch("https://codex-api.herokuapp.com/",{
-//       method:"POST",
-//       headers: {
-//         'Content-Type' : "application/x-www-form-urlencoded",
-//       },
-//       data:body
-//     })
-//     var result = await res.json()
-//     console.log(result)
-
-//   }
-//   getInputData().then(postData())
-// }
