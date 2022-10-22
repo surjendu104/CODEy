@@ -140,6 +140,7 @@ async function executeCode() {
       mode: 'no-cors',
     })
     const result = await res.json()
+    console.log(result)
     outputResponse.value = result.getOutput
   }
   let promise = new Promise((resolve,reject) =>{
