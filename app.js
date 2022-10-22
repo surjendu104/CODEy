@@ -91,41 +91,23 @@ function changeFontSize() {
 
 var codeData, langData, inputData
 const inputTextAreaContent = document.getElementById('input')
-function getInputTextAreaValue() {
+
+function getInputData() {
   inputTextAreaContent.addEventListener('input', function handleChange(event) {
     inputTextAreaContent.value = event.target.value
   })
   inputData = inputTextAreaContent.value
   codeData = editor.getSession().getValue()
   langData = lang.options[lang.selectedIndex].value
-  return 0
-}
-function getInputData() {
-  // inputTextAreaContent.addEventListener('input', function handleChange(event) {
-  //   inputTextAreaContent.value = event.target.value
-  // })
-  // inputData = inputTextAreaContent.value
-  // codeData = editor.getSession().getValue()
-  // langData = lang.options[lang.selectedIndex].value
-  getInputTextAreaValue()
-  console.log(inputData)
-  console.log(codeData)
-  console.log(langData)
-  var dd = JSON.stringify({
-    code: codeData,
-    language: langData,
-    input: inputData
-  })
-  console.log(dd)
-  return getInputTextAreaValue()
 
 }
 
 async function executeCode() {
   async function postData() {
-    const res = await fetch("https://compilation-server.herokuapp.com/", {
+    getInputData()
+    
+    const req = await fetch("https://compilation-server.herokuapp.com/", {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -135,21 +117,27 @@ async function executeCode() {
         input: inputData
       })
     })
-
+    
+    var dd = JSON.stringify({
+      code: codeData,
+        language: langData,
+        input: inputData
+    })
+    console.log(dd)
   }
   async function getData() {
-
+    postData()
     const res = await fetch("https://compilation-server.herokuapp.com/getOutput", {
       method: 'GET',
-      mode: 'no-cors',
     })
     const result = await res.json()
     console.log(result)
     outputResponse.value = result.getOutput
   }
-  let promise = new Promise((resolve,reject) =>{
-    resolve(getInputData())
-  })
-  promise.then(postData()).then(getData())
+  // let promise = new Promise((resolve,reject) =>{
+  //   resolve(getInputData())
+  // })
+  // promise.then(postData()).then(getData())
+  getData()
 
 }
