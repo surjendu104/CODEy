@@ -88,8 +88,6 @@ function changeFontSize() {
   if(fontValue=="25")document.getElementById('editor').style.fontSize = '25px';
 }
 
-const baseUrl = 'https://code-compilation-api-for-ide.herokuapp.com/'
-// const baseUrl = `${process.env.BACKEND_ROOT_URL}`
 
 var codeData, langData, inputData
 const inputTextAreaContent = document.getElementById('input')
@@ -109,10 +107,16 @@ function getInputData() {
   // inputData = inputTextAreaContent.value
   // codeData = editor.getSession().getValue()
   // langData = lang.options[lang.selectedIndex].value
-  // getInputTextAreaValue()
-  // console.log(inputData)
-  // console.log(codeData)
-  // console.log(langData)
+  getInputTextAreaValue()
+  console.log(inputData)
+  console.log(codeData)
+  console.log(langData)
+  var dd = JSON.stringify({
+    code: codeData,
+    language: langData,
+    input: inputData
+  })
+  console.log(dd)
   return getInputTextAreaValue()
 
 }
