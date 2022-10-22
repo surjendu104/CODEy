@@ -104,10 +104,11 @@ function getInputData() {
 
 async function executeCode() {
   async function postData() {
-    getInputData()
+    // getInputData()
     
     const req = await fetch("https://compilation-server.herokuapp.com/", {
       method: 'POST',
+      // mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -126,7 +127,7 @@ async function executeCode() {
     console.log(dd)
   }
   async function getData() {
-    postData()
+    // postData()
     const res = await fetch("https://compilation-server.herokuapp.com/getOutput", {
       method: 'GET',
     })
@@ -134,10 +135,10 @@ async function executeCode() {
     console.log(result)
     outputResponse.value = result.getOutput
   }
-  // let promise = new Promise((resolve,reject) =>{
-  //   resolve(getInputData())
-  // })
-  // promise.then(postData()).then(getData())
-  getData()
+  let promise = new Promise((resolve,reject) =>{
+    resolve(getInputData())
+  })
+  promise.then(postData()).then(getData())
+  // getData()
 
 }
