@@ -137,7 +137,6 @@ async function executeCode() {
 
     const res = await fetch("https://compilation-server.herokuapp.com/getOutput", {
       method: 'GET',
-      mode: 'no-cors',
     })
     const result = await res.json()
     console.log(result)
