@@ -88,7 +88,7 @@ function changeFontSize() {
   if(fontValue=="25")document.getElementById('editor').style.fontSize = '25px';
 }
 
-const baseUrl = 'http://localhost:48622/'
+const baseUrl = 'https://code-compilation-api-for-ide.herokuapp.com/'
 // const baseUrl = `${process.env.BACKEND_ROOT_URL}`
 
 var codeData, langData, inputData
