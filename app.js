@@ -103,13 +103,10 @@ function getInputData() {
 }
 
 var result
-async function executeCode() {
+async function runCode() {
   async function postData() {
-    // getInputData()
-    
     const req = await fetch("https://compilation-server.herokuapp.com/", {
       method: 'POST',
-      // mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -119,21 +116,12 @@ async function executeCode() {
         input: inputData
       })
     })
-    
-    var dd = JSON.stringify({
-      code: codeData,
-        language: langData,
-        input: inputData
-    })
-    console.log(dd)
   }
   async function getData() {
-    // postData()
     const res = await fetch("https://compilation-server.herokuapp.com/getOutput", {
       method: 'GET',
     })
     result = await res.json()
-    console.log(result)
     outputResponse.value = result.getOutput
   }
 
@@ -141,16 +129,11 @@ async function executeCode() {
     resolve(getInputData())
   })
   promise.then(postData()).then(getData())
-  // getData()
 
 }
 
-function codey() {
+function executeCode() {
   for(let i=0;i<2;i++) {
-    executeCode();
-    if(i==1) {
-      console.log("ans : ",result)
-    }
+    runCode()
   }
-  // outputResponse.value = result.getOutput
 }
