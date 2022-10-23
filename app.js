@@ -132,20 +132,10 @@ async function executeCode() {
     const res = await fetch("https://compilation-server.herokuapp.com/getOutput", {
       method: 'GET',
     })
-    return result = await res.json()
+    result = await res.json()
     console.log(result)
-    // outputResponse.value = result.getOutput
+    outputResponse.value = result.getOutput
   }
-  // for(let i=0;i<2;i++) {
-
-  //   let promise = new Promise((resolve,reject) =>{
-  //     resolve(getInputData())
-  //   })
-  //   promise.then(postData()).then(getData())
-  //   if(i==1) {
-  //     outputResponse.value = result.getOutput
-  //   }
-  // }
 
   let promise = new Promise((resolve,reject) =>{
     resolve(getInputData())
@@ -153,4 +143,14 @@ async function executeCode() {
   promise.then(postData()).then(getData())
   // getData()
 
+}
+
+function codey() {
+  for(let i=0;i<2;i++) {
+    executeCode();
+    if(i==1) {
+      console.log("ans : ",result)
+    }
+  }
+  // outputResponse.value = result.getOutput
 }
