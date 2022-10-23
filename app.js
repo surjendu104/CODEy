@@ -4,46 +4,7 @@ let lang = document.getElementById('language')
 let theme = document.getElementById('changeTheme')
 let font = document.getElementById('fontSize')
 
-/* textarea.addEventListener('keydown', (e) => {
-  if (e.key === 'Tab') {
-    e.preventDefault()
-    textarea.setRangeText(
-      '  ',
-      textarea.selectionStart,
-      textarea.selectionStart,
-      'end'
-    )
-  }
-})
 
-const lineNumbers = document.querySelector('.line-numbers')
-
-textarea.addEventListener('keyup', event => {
-  const numberOfLines = event.target.value.split('\\n').length
-
-  lineNumbers.innerHTML = Array(numberOfLines)
-    .fill('<span></span>')
-    .join('')
-})
-
-
-var inputData, codeData,langData
-const inputTextAreaContent = document.getElementById('input')
-const codeTextAreaContent = document.getElementById('code-write')
-function getInputTextAreaValue() {
-  inputTextAreaContent.addEventListener('input', function handleChange(event) {
-    inputTextAreaContent.value = event.target.value
-  })
-
-  codeTextAreaContent.addEventListener('input', function handleChange(event) {
-    codeTextAreaContent.value = event.target.value
-  })
-
-  inputData = inputTextAreaContent.value
-  codeData = codeTextAreaContent.value
-  langData = lang.options[lang.selectedIndex].value
-  console.log(langData)
-} */
 
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/cobalt");
