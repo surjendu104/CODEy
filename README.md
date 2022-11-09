@@ -1,5 +1,5 @@
 # CODEy
-## It a multilangual code editor made by me
+## It is a multilangual code editor made by me
 ### It supports 6 famous programming languages
 1. C
 2. C++
