@@ -66,7 +66,7 @@ function getInputData() {
 var result
 async function runCode() {
   async function postData() {
-    const req = await fetch("https://compilation-server.herokuapp.com/", {
+    const req = await fetch("https://cod-ey-api.vercel.app//", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -79,7 +79,7 @@ async function runCode() {
     })
   }
   async function getData() {
-    const res = await fetch("https://compilation-server.herokuapp.com/getOutput", {
+    const res = await fetch("https://cod-ey-api.vercel.app/getOutput", {
       method: 'GET',
     })
     result = await res.json()
