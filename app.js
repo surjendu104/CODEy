@@ -66,7 +66,7 @@ function getInputData() {
 var result
 async function runCode() {
   async function postData() {
-    const req = await fetch("https://cod-ey-api.vercel.app//", {
+    const req = await fetch("https://cod-ey-api.vercel.app/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
