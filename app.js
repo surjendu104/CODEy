@@ -67,6 +67,7 @@ var result
 async function runCode() {
   async function postData() {
     const req = await fetch("https://cod-ey-api.vercel.app/", {
+      mode:'cors',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -80,6 +81,7 @@ async function runCode() {
   }
   async function getData() {
     const res = await fetch("https://cod-ey-api.vercel.app/getOutput", {
+      mode:'cors',
       method: 'GET',
     })
     result = await res.json()
