@@ -22,7 +22,7 @@ function changeLanguage() {
   else if (langData == "py") editor.session.setMode("ace/mode/python");
   else if (langData == "go") editor.session.setMode("ace/mode/golang");
   else if (langData == "js") editor.session.setMode("ace/mode/javascript");
-  
+
 }
 
 function changeTheme() {
@@ -41,12 +41,12 @@ function changeTheme() {
 
 function changeFontSize() {
   let fontValue = font.options[font.selectedIndex].value
-  if(fontValue=="9")document.getElementById('editor').style.fontSize = '9px';
-  if(fontValue=="10")document.getElementById('editor').style.fontSize = '10px';
-  if(fontValue=="15")document.getElementById('editor').style.fontSize = '15px';
-  if(fontValue=="18")document.getElementById('editor').style.fontSize = '18px';
-  if(fontValue=="22")document.getElementById('editor').style.fontSize = '22px';
-  if(fontValue=="25")document.getElementById('editor').style.fontSize = '25px';
+  if (fontValue == "9") document.getElementById('editor').style.fontSize = '9px';
+  if (fontValue == "10") document.getElementById('editor').style.fontSize = '10px';
+  if (fontValue == "15") document.getElementById('editor').style.fontSize = '15px';
+  if (fontValue == "18") document.getElementById('editor').style.fontSize = '18px';
+  if (fontValue == "22") document.getElementById('editor').style.fontSize = '22px';
+  if (fontValue == "25") document.getElementById('editor').style.fontSize = '25px';
 }
 
 
@@ -67,7 +67,7 @@ var result
 async function runCode() {
   async function postData() {
     const req = await fetch("https://cod-ey-api.vercel.app/", {
-      mode:'cors',
+      // mode:'cors',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -81,22 +81,45 @@ async function runCode() {
   }
   async function getData() {
     const res = await fetch("https://cod-ey-api.vercel.app/getOutput", {
-      mode:'cors',
+      // mode:'cors',
       method: 'GET',
     })
     result = await res.json()
     outputResponse.value = result.getOutput
   }
 
-  let promise = new Promise((resolve,reject) =>{
+  let promise = new Promise((resolve, reject) => {
     resolve(getInputData())
   })
   promise.then(postData()).then(getData())
 
 }
 
-function executeCode() {
-  for(let i=0;i<2;i++) {
-    runCode()
-  }
+async function executeCode() {
+  // for(let i=0;i<2;i++) {
+  //   runCode()
+  // }
+
+  await fetch("http://localhost:8383/", {
+    mode:'cors',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      code: codeData,
+      language: langData,
+      input: inputData
+    })
+  })
+  // await fetch("https://cod-ey-api.vercel.app/getOutput", {
+  //   mode:'cors',
+  //   method: 'GET',
+  // })
+  result = res.json()
+  outputResponse.value = result.getOutput
+}
+
+function clearOutput() {
+  outputResponse.value = ""
 }
