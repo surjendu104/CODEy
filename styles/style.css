@@ -20,32 +20,27 @@ body {
   position: sticky;
   transition: top 0.3s;
 }
-
-.header>div {
+.header > div {
   display: flex;
   align-items: center;
   padding-left: 1rem;
 }
-
-.header>div>img {
+.header > div > img {
   height: 2rem;
   width: 2rem;
   border-radius: 50%;
 }
-
-.header>div>h2 {
+.header > div > h2 {
   padding: 0.5rem;
   font-size: 200;
   font-family: "Roboto", sans-serif;
 }
-
-.header>main {
+.header > main {
   width: 70%;
   display: flex;
   justify-content: flex-end;
 }
-
-.header>main>a {
+.header > main > a {
   margin: 1rem;
   color: rgb(44, 44, 44);
 }
@@ -60,7 +55,6 @@ body {
   align-items: center;
   margin: 0 auto;
 }
-
 .home .editor {
   padding: 5px;
   width: 75vh;
@@ -68,20 +62,17 @@ body {
   border-radius: 1rem;
   overflow: hidden;
 }
-
 .home .IO-area {
   width: 75vh;
   height: 90vh;
   background-color: #5c616d;
   border-radius: 1rem;
 }
-
 .home .IO-area .input .input-navbar {
   margin-left: auto;
   margin-right: auto;
 }
-
-.home .IO-area .input .input-navbar>select {
+.home .IO-area .input .input-navbar > select {
   margin: 15px;
   width: 140px;
   height: 40px;
@@ -93,16 +84,14 @@ body {
   background-color: #282a36;
   font-size: 16px;
 }
-
-.home .IO-area .input .input-body>h2 {
+.home .IO-area .input .input-body > h2 {
   margin-top: 20px;
   text-align: center;
   color: white;
   font-family: "Lucida Console", "Courier New", monospace;
   font-size: 30px;
 }
-
-.home .IO-area .input .input-body>textarea {
+.home .IO-area .input .input-body > textarea {
   width: 500px;
   height: 150px;
   padding-left: 10px;
@@ -117,17 +106,14 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
 .home .IO-area .input .input-body textarea::-webkit-scrollbar {
   width: 0.4rem;
 }
-
 .home .IO-area .input .input-body textarea::-webkit-scrollbar-thumb {
   background-color: rgb(239, 123, 142);
   border-radius: 0.4rem;
 }
-
-.home .IO-area .input .input-body>button {
+.home .IO-area .input .input-body > button {
   display: block;
   margin: 0 auto 0 auto;
   background-color: rgb(8, 238, 8);
@@ -136,16 +122,14 @@ body {
   font-size: 15px;
   padding: 10px;
 }
-
-.home .IO-area .output>h2 {
+.home .IO-area .output > h2 {
   margin-top: 20px;
   text-align: center;
   color: white;
   font-family: "Lucida Console", "Courier New", monospace;
   font-size: 30px;
 }
-
-.home .IO-area .output>textarea {
+.home .IO-area .output > textarea {
   width: 500px;
   height: 200px;
   padding-left: 10px;
@@ -172,16 +156,14 @@ body {
   border-radius: 5px;
   justify-content: center;
 }
-
-.footer .row>a {
+.footer .row > a {
   margin: 10px;
   font-size: 20px;
   text-decoration: none;
   color: white;
   transition: 0.5s;
 }
-
-.footer .last>p {
+.footer .last > p {
   margin-top: 5px;
   color: white;
 }
@@ -197,6 +179,4 @@ body {
 .output textarea::-webkit-scrollbar-thumb {
   background-color: rgb(239, 123, 142);
   border-radius: 0.4rem;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
