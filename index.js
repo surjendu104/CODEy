@@ -69,22 +69,22 @@ async function exec() {
         "language": langData,
         "input": inputData
     })
-    console.log(data);
+    // console.log(data);
     const URL = "https://cod-ey-api.vercel.app/";
     try {
         const fetchResult = await fetch(URL, {
-            // mode: 'cors',
+            mode: 'cors',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin':'*',
-                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
             },
             body: data
         })
-        console.log("DATA SENT Successfully");
+        // console.log("DATA SENT Successfully");
         const compiledResult = await fetchResult.json()
-        console.log(compiledResult);
+        // console.log(compiledResult);
         executeCode(compiledResult.getOutput)
     } catch (e) {
         console.log(e);
