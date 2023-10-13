@@ -23,7 +23,7 @@
     <nav class="header">
         <div>
             <img src="img/icon1.jpg">
-            <h2>CODEy</h2>
+            <h2 id="name">CODEy</h2>
         </div>
         <!-- <main>
             <a href="">About</a>
@@ -31,6 +31,48 @@
             <a href="">About</a>
             <a href="">About</a>
         </main> -->
+        <div class="input-navbar">
+
+            <select class="selectBox language" id="language" name="language" onchange="changeLanguage()">
+                SELECT LANGUAGE:
+                <option selected>Language</option>
+                &nbsp;&nbsp;
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="cs">C#</option>
+                <option value="java">Java</option>
+                <option value="py">Python</option>
+                <option value="go">GOlang</option>
+                <option value="js">JavaScript</option>
+            </select>
+            <select class="selectBox changeTheme" id="changeTheme" name="changeTheme" onchange="changeTheme()">
+                SELECT THEME:
+                &nbsp;&nbsp;
+                <option selected>Themes</option>
+                <option value="ambiance">Ambiance</option>
+                <option value="chaos">Chaos</option>
+                <option value="chrome">Chrome</option>
+                <option value="cobalt">Cobalt</option>
+                <option value="dracula">Dracula</option>
+                <option value="eclipse">Eclipse</option>
+                <option value="github">GitHub</option>
+                <option value="twilight">Twilight</option>
+                <option value="xcode">Xcode</option>
+                <option value="sql">SQL Server</option>
+            </select>
+            <select class="selectBox fontSize" id="fontSize" name="fontSize" onchange="changeFontSize()">
+                SELECT FONTSIZE:
+                &nbsp;&nbsp;
+                <option selected>Font Size</option>
+                <option value="9">9px</option>
+                <option value="10">10px</option>
+                <option value="15">15px</option>
+                <option value="18">18px</option>
+                <option value="22">22px</option>
+                <option value="25">25px</option>
+            </select>
+            <button class="run" onclick="runCode()">RUN</button>
+        </div>
     </nav>
     <div class="home">
         <!-- First portion -->
@@ -39,51 +81,10 @@
         <!-- Second portion -->
         <div class="IO-area">
             <div class="input">
-                <div class="input-navbar">
 
-                    <select class="selectBox language" id="language" name="language" onchange="changeLanguage()">
-                        SELECT LANGUAGE:
-                        <option selected>Language</option>
-                        &nbsp;&nbsp;
-                        <option value="c">C</option>
-                        <option value="cpp">C++</option>
-                        <option value="cs">C#</option>
-                        <option value="java">Java</option>
-                        <option value="py">Python</option>
-                        <option value="go">GOlang</option>
-                        <option value="js">JavaScript</option>
-                    </select>
-                    <select class="selectBox changeTheme" id="changeTheme" name="changeTheme" onchange="changeTheme()">
-                        SELECT THEME:
-                        &nbsp;&nbsp;
-                        <option selected>Themes</option>
-                        <option value="ambiance">Ambiance</option>
-                        <option value="chaos">Chaos</option>
-                        <option value="chrome">Chrome</option>
-                        <option value="cobalt">Cobalt</option>
-                        <option value="dracula">Dracula</option>
-                        <option value="eclipse">Eclipse</option>
-                        <option value="github">GitHub</option>
-                        <option value="twilight">Twilight</option>
-                        <option value="xcode">Xcode</option>
-                        <option value="sql">SQL Server</option>
-                    </select>
-                    <select class="selectBox fontSize" id="fontSize" name="fontSize" onchange="changeFontSize()">
-                        SELECT FONTSIZE:
-                        &nbsp;&nbsp;
-                        <option selected>Font Size</option>
-                        <option value="9">9px</option>
-                        <option value="10">10px</option>
-                        <option value="15">15px</option>
-                        <option value="18">18px</option>
-                        <option value="22">22px</option>
-                        <option value="25">25px</option>
-                    </select>
-                </div>
                 <div class="input-body">
                     <h2>INPUT</h2>
                     <textarea spellcheck="false" id="input"></textarea>
-                    <button  onclick="exec()">RUN</button>
                 </div>
                 <!-- <div class="button-container">
                     </div> -->
