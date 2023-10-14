@@ -1,0 +1,111 @@
+/* Default styles (for all screen sizes) */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-size: 300% 300%;
+    background-image: linear-gradient(45deg, rgb(147, 33, 147), pink, rgb(161, 44, 245));
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    transition: top 0.3s;
+    background-color: #00111c;
+    padding-right: 20px;
+  }
+
+  
+ 
+  @media (max-width: 768px) {
+    body {
+      background-size: cover; /* Adjust background image for small screens */
+    }
+  
+    .header {
+      flex-direction: column; /* Stack header items on top of each other */
+      padding: 20px; /* Increase padding for better spacing */
+    }
+  
+  }
+  
+  @media (min-width: 1200px) {
+    .header {
+      padding-right: 40px; /* Increase padding for better spacing on larger screens */
+    }
+  
+    
+  }
+
+@media (max-width: 768px) {
+    body {
+      background-size: cover; /* Adjust background image for small screens */
+    }
+  
+    .header {
+      flex-direction: column; /* Stack header items on top of each other */
+      padding: 20px; /* Increase padding for better spacing */
+    }
+  
+ 
+    .header > div {
+      padding-left: 0.5rem; /* Reduce left padding for logo and name */
+    }
+  
+    .header > div > img {
+      height: 1.5rem; /* Decrease logo size for small screens */
+      width: 1.5rem;
+    }
+  
+    .home .editor {
+      height: 45vh; /* Decrease the code editor's height */
+    }
+  }
+  
+  /* Media query for screens larger than 1200px */
+  @media (min-width: 1200px) {
+    .header {
+      padding-right: 40px; /* Increase padding for better spacing on larger screens */
+    }
+  
+
+    .home .editor {
+      height: 75vh; /* Increase the code editor's height */
+    }
+  }
+  /* (common tablet screen sizes) */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .header {
+      padding-right: 30px; /* Adjust header padding for tablet screens */
+    }
+    
+  }
+  
+  /*(typical mobile phone screens) */
+  @media (max-width: 576px) {
+    .header {
+      padding-right: 10px; /* Reduce padding on small mobile screens */
+    }
+  
+    .header > div > img {
+      height: 1.2rem; /* Further decrease logo size for small screens */
+      width: 1.2rem;
+    }
+  
+    .home .editor {
+      height: 40vh; /* Decrease code editor height for mobile screens */
+    }
+  
+  }
+  
