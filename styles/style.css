@@ -218,4 +218,45 @@ body {
   border-radius: 0.4rem;
 }
 
+.footer {
+  background-color: #00111c;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+.row > a {
+  font-size: 24px;
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  transition: 0.5s;
+}
+
+.last > p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Add hover effect to social media icons */
+.row > a:hover {
+  color: #f0c93d;
+}
+
+/* Create a border above the footer */
+.footer::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #f0c93d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
 /*# sourceMappingURL=style.css.map */
