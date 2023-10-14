@@ -108,4 +108,68 @@
     }
   
   }
-  
+
+/* Styles for screens with a maximum width of 768px (typical for mobile) */
+@media screen and (max-width: 768px) {
+  body {
+      background-size: cover; /* Ensure background image covers the entire screen */
+  }
+
+  .header {
+      padding: 10px; /* Add some padding for better mobile appearance */
+  }
+
+  .header div {
+      padding-left: 10px; /* Adjust spacing for the logo and title */
+  }
+
+  .header main {
+      display: none; /* Hide the navigation links on mobile */
+  }
+
+  .home {
+      padding: 10px; /* Add some spacing for the content */
+  }
+
+  .editor {
+      height: auto; /* Let the editor's height adjust as needed */
+  }
+
+  .IO-area {
+      flex-direction: column; /* Stack the input and output areas vertically */
+  }
+
+  .input-navbar > select,
+  .input-navbar > button {
+      width: 100%; /* Make select and button full width for mobile */
+      margin: 10px 0; /* Add some vertical spacing */
+  }
+
+  .home .IO-area .input .input-body h2,
+  .home .IO-area .output h2 {
+      font-size: 20px; /* Reduce the heading font size for mobile */
+  }
+
+  .home .IO-area .input .input-body textarea,
+  .home .IO-area .output textarea {
+      width: 100%; /* Make textareas full width for mobile */
+      margin: 10px 0; /* Add some vertical spacing */
+  }
+
+  .run {
+      margin: 10px 0; /* Add spacing to the "RUN" button */
+  }
+
+  .footer {
+      padding: 10px; /* Add some padding for better mobile appearance */
+  }
+
+  .row > a {
+      font-size: 20px; /* Adjust the social media links' font size for mobile */
+      margin: 5px; /* Add spacing between social media icons */
+  }
+
+  .last > p {
+      font-size: 14px; /* Adjust the footer text size for mobile */
+  }
+}
